@@ -4,6 +4,14 @@ const fistForm = document.querySelector("#form1");
 const secondForm = document.querySelector("#form2");
 const container = document.querySelector(".container");
 
+if (localStorage.getItem("token") !== null && localStorage.getItem("token") !== "") {
+	window.location.href = "welcome.html";
+  }
+
+  if (localStorage.getItem("token") == null && localStorage.getItem("token") == "") {
+	window.location.href = "index.html";
+  }
+  
 signInBtn.addEventListener("click", () => {
   container.classList.remove("right-panel-active");
 });
@@ -53,6 +61,7 @@ async function handleLogin(e) {
 	  const data = await response.json();
 	  localStorage.setItem("token", data.token);
 	  alert("Login successful!");
+	  window.location.href = "welcome.html"
   
 	} catch (error) {
 	  console.error(error);
