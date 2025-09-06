@@ -4,17 +4,11 @@ const fistForm = document.querySelector("#form1");
 const secondForm = document.querySelector("#form2");
 const container = document.querySelector(".container");
 
-if (
-  localStorage.getItem("token") !== null &&
-  localStorage.getItem("token") !== ""
-) {
+if (localStorage.getItem("token") !== null && localStorage.getItem("token") !== "") {
   window.location.href = "welcome.html";
 }
 
-if (
-  localStorage.getItem("token") == null &&
-  localStorage.getItem("token") == ""
-) {
+if (localStorage.getItem("token") == null && localStorage.getItem("token") == "") {
   window.location.href = "index.html";
 }
 
